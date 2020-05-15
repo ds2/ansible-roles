@@ -1,0 +1,6 @@
+sshKeyName: 'mySshKey.key'
+sshKeyPw: ''
+sshKeyAlg: 'ed25519'
+sshKeyComment: ""
+sshKeyDir: '~/.ssh'
+sshKeyFullPath: "{{sshKeyDir}}/{{sshKeyName}}"

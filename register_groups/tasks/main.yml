@@ -1,0 +1,9 @@
+- name: register groups
+  group:
+    name: "{{item.name}}"
+    state: present
+    system: "{{item.system | omit}}"
+    gid: "{{item.groupId | omit}}"
+  loop:
+    - "{{groupsToRegister}}"
+  tags: [ "registerGroups" ]

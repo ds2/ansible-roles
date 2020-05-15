@@ -1,0 +1,12 @@
+# - shell: "ip addr add {{ifIpAddressNw}} dev {{ifDevice}}"
+# - shell: "ip link set {{ifDevice}} up"
+- name: install network config
+  template:
+    src: ifcfg-enp.conf.j2
+    dest: "/etc/sysconfig/network-scripts/ifcfg-{{ifDevice}}"
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify:
+    - restart network

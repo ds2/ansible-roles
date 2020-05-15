@@ -1,0 +1,4 @@
+AZUL_MACOS_8_LTS: 'https://cdn.azul.com/zulu/bin/zulu8.44.0.11-ca-jdk8.0.242-macosx_x64.zip'
+DEFAULT_JAVA_DIR: '/javaRuntimes'
+AZUL_MACOS_11_LTS: 'https://cdn.azul.com/zulu/bin/zulu11.37.17-ca-jdk11.0.6-macosx_x64.zip'
+AZUL_MACOS_MC: 'https://static.azul.com/zmc/bin/zmc7.0.0.57-ca-macos_x64.tar.gz'

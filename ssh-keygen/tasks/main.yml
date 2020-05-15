@@ -1,0 +1,13 @@
+- name: create ssh key dir
+  file:
+    dest: "{{sshKeyDir}}"
+    owner: "{{sshKeyUser}}"
+    group: root
+    state: directory
+    mode: 0700
+- name: "create ssh key for user {{sshKeyUser}} in {{sshKeyFullPath}}"
+  shell: ssh-keygen -C {{sshKeyComment | quote}} -f {{sshKeyFullPath | quote}} -t {{sshKeyAlg}} -q -N {{sshKeyPw | quote}}
+  args:
+    chdir: "{{sshKeyDir}}"
+    creates: "{{sshKeyFullPath}}"
+  become_user: "{{sshKeyUser}}"

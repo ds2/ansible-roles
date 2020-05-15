@@ -1,0 +1,6 @@
+- name: deactivate auto-updates
+  shell: /bin/systemctl disable --now apt-daily{,-upgrade}.{timer,service}
+  when: ansible_distribution == 'Ubuntu'
+  become: true
+  args:
+    executable: /bin/bash

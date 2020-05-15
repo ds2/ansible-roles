@@ -1,0 +1,22 @@
+- name: create java runtime dir
+  file:
+    dest: "{{DEFAULT_JAVA_DIR}}"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+- name: download java 8 to runtime directory
+  unarchive:
+    src: "{{AZUL_MACOS_8_LTS}}"
+    dest: "{{DEFAULT_JAVA_DIR}}"
+    remote_src: yes
+- name: download java 11to runtime directory
+  unarchive:
+    src: "{{AZUL_MACOS_11_LTS}}"
+    dest: "{{DEFAULT_JAVA_DIR}}"
+    remote_src: yes
+- name: download mission control to runtime directory
+  unarchive:
+    src: "{{AZUL_MACOS_MC}}"
+    dest: "{{DEFAULT_JAVA_DIR}}"
+    remote_src: yes
